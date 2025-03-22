@@ -171,7 +171,7 @@
    */
   
   document.addEventListener("DOMContentLoaded", function () {
-    fetch("header.html")
+    fetch("../header.html")
         .then(response => response.text())
         .then(data => {
             document.getElementById("header").innerHTML = data;
@@ -182,7 +182,7 @@
         })
         .catch(error => console.error("Error loading header:", error));
 
-        fetch("page-title.html")
+        fetch("../page-title.html")
         .then(response => response.text())
         .then(data => {
             // Inject page-title.html content into the .page-title container
