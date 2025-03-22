@@ -202,6 +202,7 @@
 
 function updatePageTitle() {
   const urlParams = new URLSearchParams(window.location.search);
+  
   const pageTitle = urlParams.get("title");
 
   if (pageTitle) {
@@ -261,12 +262,10 @@ function initMobileMenu(){
 }
   function initNavMenu() {
       let navmenulinks = document.querySelectorAll('.navmenu a');
-
       function navmenuScrollspy() {
           let position = window.scrollY + 200;
-
-          navmenulinks.forEach(navmenulink => {
-              if (!navmenulink.hash) return;
+          navmenulinks.forEach(navmenulink => {            
+              if (!navmenulink.hash) return;              
               let section = document.querySelector(navmenulink.hash);
               if (!section) return;
 
@@ -278,6 +277,23 @@ function initMobileMenu(){
               }
           });
       }
+
+      function activeMenuOnNavigation(){
+        if (!document.querySelector(navmenulinks.hash)) {
+          document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
+          const url = window.location.pathname;
+          let arr = ['training','products','services']
+          let pageName = url.split('/')[1]
+          if(arr.includes(pageName)){
+            let currentMenu = Array.from(navmenulinks).find((menu) => {
+              // Make sure to trim spaces and check case-insensitive match              
+              return menu.textContent.trim().toLowerCase() === pageName.trim().toLowerCase();
+            });
+            currentMenu.classList.add('active')            
+          }
+        };
+      }
+      activeMenuOnNavigation()
 
       // Run scrollspy on page load and on scroll
       navmenuScrollspy();
