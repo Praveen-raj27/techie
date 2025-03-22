@@ -282,7 +282,7 @@ function initMobileMenu(){
         if (!document.querySelector(navmenulinks.hash)) {
           document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
           const url = window.location.pathname;
-          let arr = ['training','products','services']
+          let arr = ['trainings','products','services']
           let pageName = url.split('/')[1]
           if(arr.includes(pageName)){
             let currentMenu = Array.from(navmenulinks).find((menu) => {
