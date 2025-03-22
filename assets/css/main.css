@@ -1733,3 +1733,21 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+.parallax {
+  /* The image used */
+  background-image: url('/assets/img/stats-img.svg');
+
+  /* Set a specific height */
+  min-height: 300px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 25px;
+}
+.mt-50{
+  margin-top: 50px;
+}
