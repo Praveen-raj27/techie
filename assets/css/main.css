@@ -846,6 +846,7 @@ section,
 --------------------------------------------------------------*/
 .stats .stats-item {
   padding: 10px;
+  justify-content: center;
 }
 
 .stats .stats-item i {
